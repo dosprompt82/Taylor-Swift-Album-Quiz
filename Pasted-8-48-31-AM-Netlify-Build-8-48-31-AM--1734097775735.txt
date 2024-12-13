@@ -1,0 +1,60 @@
+8:48:31 AM: Netlify Build                                                 
+8:48:31 AM: ────────────────────────────────────────────────────────────────
+8:48:31 AM: ​
+8:48:31 AM: ❯ Version
+8:48:31 AM:   @netlify/build 29.56.1
+8:48:31 AM: ​
+8:48:31 AM: ❯ Flags
+8:48:31 AM:   accountId: 675b58e1b9f7170464767e36
+8:48:31 AM:   baseRelDir: true
+8:48:31 AM:   buildId: 675c3b1124ce220008688cfa
+8:48:31 AM:   deployId: 675c3b1124ce220008688cfc
+8:48:31 AM: ​
+8:48:31 AM: ❯ Current directory
+8:48:31 AM:   /opt/build/repo
+8:48:31 AM: ​
+8:48:31 AM: ❯ Config file
+8:48:31 AM:   No config file was defined: using default values.
+8:48:31 AM: ​
+8:48:31 AM: ❯ Context
+8:48:31 AM:   production
+8:48:31 AM: ​
+8:48:31 AM: ❯ Installing plugins
+8:48:31 AM:    - @netlify/plugin-lighthouse@6.0.1
+8:48:44 AM: ​
+8:48:44 AM: ❯ Loading plugins
+8:48:44 AM:    - @netlify/plugin-lighthouse@6.0.1 from Netlify app
+8:48:46 AM: ​
+8:48:46 AM: Build command from Netlify app                                
+8:48:46 AM: ────────────────────────────────────────────────────────────────
+8:48:46 AM: ​
+8:48:46 AM: $ npm run build
+8:48:46 AM: > react-typescript@1.0.0 build
+8:48:46 AM: > tsc && vite build
+8:48:47 AM: src/App.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+8:48:47 AM: src/components/TipButton.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+8:48:47 AM: ​
+8:48:47 AM: "build.command" failed                                        
+8:48:47 AM: ────────────────────────────────────────────────────────────────
+8:48:47 AM: ​
+8:48:47 AM:   Error message
+8:48:47 AM:   Command failed with exit code 2: npm run build (https://ntl.fyi/exit-code-2)
+8:48:47 AM: ​
+8:48:47 AM:   Error location
+8:48:47 AM:   In Build command from Netlify app:
+8:48:47 AM:   npm run build
+8:48:47 AM: ​
+8:48:47 AM:   Resolved config
+8:48:47 AM:   build:
+8:48:47 AM:     command: npm run build
+8:48:47 AM:     commandOrigin: ui
+8:48:47 AM:     publish: /opt/build/repo/dist
+8:48:47 AM:     publishOrigin: ui
+8:48:47 AM:   plugins:
+8:48:47 AM:     - inputs: {}
+8:48:47 AM:       origin: ui
+8:48:47 AM:       package: '@netlify/plugin-lighthouse'
+8:48:47 AM: Build failed due to a user error: Build script returned non-zero exit code: 2
+8:48:47 AM: Failing build: Failed to build site
+8:48:48 AM: Finished processing build request in 34.199s
+8:48:47 AM: Failed during stage 'building site': Build script returned non-zero exit code: 2 (https://ntl.fyi/exit-code-2)

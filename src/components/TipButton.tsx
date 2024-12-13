@@ -1,5 +1,3 @@
-import React from 'react';
-
 const TipButton = () => {
   return (
     <form action="https://www.paypal.com/donate" method="post" target="_blank" className="mt-4">
