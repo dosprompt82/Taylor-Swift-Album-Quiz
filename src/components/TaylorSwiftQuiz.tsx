@@ -21,9 +21,7 @@ interface Album {
 type AlbumKey = 'debut' | 'fearless' | 'speakNow' | 'red' | 'nineteenEightyNine' | 
                 'reputation' | 'lover' | 'folklore' | 'evermore' | 'midnights' | 'torturedPoets';
 
-interface Albums {
-  [key in AlbumKey]: Album;
-}
+type Albums = Record<AlbumKey, Album>;
 
 const TaylorSwiftQuiz: React.FC = () => {
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
@@ -204,7 +202,9 @@ const TaylorSwiftQuiz: React.FC = () => {
     const albumScores: Albums = { ...albums };
 
     answers.flat().forEach((albumKey: AlbumKey) => {
-      albumScores[albumKey].score += 1;
+      if (albumKey in albumScores) {
+        albumScores[albumKey].score += 1;
+      }
     });
 
     const result = Object.values(albumScores).reduce((prev, current) => 
@@ -258,7 +258,7 @@ const TaylorSwiftQuiz: React.FC = () => {
                 Take Quiz Again
               </button>
               <TipButton />
-              </div>
+            </div>
           )}
 
           {/* Decorative elements */}
