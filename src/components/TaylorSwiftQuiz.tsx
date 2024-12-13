@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import TipButton from "./TipButton";
 
 // Define our TypeScript interfaces
 interface Option {
@@ -256,7 +257,8 @@ const TaylorSwiftQuiz: React.FC = () => {
               >
                 Take Quiz Again
               </button>
-            </div>
+              <TipButton />
+              </div>
           )}
 
           {/* Decorative elements */}
