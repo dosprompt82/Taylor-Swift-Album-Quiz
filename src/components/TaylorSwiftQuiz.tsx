@@ -21,7 +21,10 @@ interface Album {
 type AlbumKey = 'debut' | 'fearless' | 'speakNow' | 'red' | 'nineteenEightyNine' | 
                 'reputation' | 'lover' | 'folklore' | 'evermore' | 'midnights' | 'torturedPoets';
 
-type Albums = Record<AlbumKey, Album>;
+// Changed this type definition
+type Albums = {
+  [K in AlbumKey]: Album;
+};
 
 const TaylorSwiftQuiz: React.FC = () => {
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
@@ -198,12 +201,13 @@ const TaylorSwiftQuiz: React.FC = () => {
     }
   };
 
+  // Updated calculateResult function with better type safety
   const calculateResult = (): void => {
-    const albumScores: Albums = { ...albums };
+    const albumScores = { ...albums };
 
     answers.flat().forEach((albumKey: AlbumKey) => {
       if (albumKey in albumScores) {
-        albumScores[albumKey].score += 1;
+        albumScores[albumKey as keyof typeof albumScores].score += 1;
       }
     });
 
